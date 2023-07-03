@@ -1,0 +1,29 @@
+$background-color: #85b8e5;
+$primary-color: #efefef;
+$secondary-color: #262626;
+
+
+body {
+    text-align: center;
+    background: $primary-color;
+    font-family: 'Poppins', sans-serif;
+    color: #262626;
+}
+
+input[type="text"] {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $secondary-color;
+    background: transparent;
+}
+
+.ul-tasks {
+    margin-top: 1em;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.tasks
