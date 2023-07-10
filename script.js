@@ -3,7 +3,6 @@ const newTaskInput = document.querySelector("[data-new-task]")
 const addTaskBtn = document.querySelector("[data-add-task-btn]")
 const toDoList = document.querySelector("[data-todo-list]")
 const tasks = document.querySelector(".tasks")
-
 // táto podmienka zaistí že ak v LS nič nie je vytvorí myToDoList ale ak sa nejaká hodnota v LS (key = tasks) nachádza vyberie ich a parsne ich 
 if(localStorage.getItem("tasks") === null) {
 
