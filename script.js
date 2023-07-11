@@ -5,11 +5,6 @@ const toDoList = document.querySelector("[data-todo-list]")
 const clearTasksBtn = document.querySelector(".clear-btn")
 console.log(clearTasksBtn)
 
-clearTasksBtn.addEventListener("click", function () {
-    localStorage.clear()
-
-})
-
 // táto podmienka zaistí že ak v LS nič nie, je vytvorí sa myToDoList ale ak sa nejaká hodnota v LS (key = tasks) nachádza vyberie ich a parsne ich 
 if(localStorage.getItem("tasks") === null) {
 
@@ -59,9 +54,13 @@ if (myToDoListFromLS !== null) {
     })
 }
 else {
-    alert("Local Storage je prázdny nemám čo vypísať ")
+   // alert("Local Storage je prázdny nemám čo vypísať ")
 }
 
 
+clearTasksBtn.addEventListener("click", function () {
+    localStorage.clear()
+    toDoList.innerHTML = ""
 
-
+    myToDoList = []
+})
