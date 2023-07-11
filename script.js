@@ -3,7 +3,11 @@ const newTaskInput = document.querySelector("[data-new-task]")
 const addTaskBtn = document.querySelector("[data-add-task-btn]")
 const toDoList = document.querySelector("[data-todo-list]")
 const clearTasksBtn = document.querySelector(".clear-btn")
-console.log(clearTasksBtn)
+const listItemsTasks = document.getElementsByClassName("tasks")
+console.log(listItemsTasks)
+
+
+
 
 // táto podmienka zaistí že ak v LS nič nie, je vytvorí sa myToDoList ale ak sa nejaká hodnota v LS (key = tasks) nachádza vyberie ich a parsne ich 
 if(localStorage.getItem("tasks") === null) {
@@ -52,6 +56,13 @@ if (myToDoListFromLS !== null) {
         task.textContent = tasks
         document.querySelector("[data-todo-list]").appendChild(task)
     })
+
+    // DOBRÝ ZAČIATOK
+    myToDoList.forEach(function () {
+        this.addEventListener("click", function () {
+            console.log("click");
+        })
+    })
 }
 else {
    // alert("Local Storage je prázdny nemám čo vypísať ")
@@ -61,6 +72,5 @@ else {
 clearTasksBtn.addEventListener("click", function () {
     localStorage.clear()
     toDoList.innerHTML = ""
-
     myToDoList = []
 })
