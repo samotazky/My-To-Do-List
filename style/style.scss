@@ -1,13 +1,16 @@
 $background-color: #85b8e5;
 $primary-color: #efefef;
 $secondary-color: #262626;
-
+$hover-color : #26262698;
+$primary-font: 'Poppins', sans-serif;
 
 body {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: $primary-color;
-    font-family: 'Poppins', sans-serif;
-    color: #262626;
+    font-family: $primary-font;
+    color: $secondary-color;
 }
 
 input[type="text"] {
@@ -17,13 +20,29 @@ input[type="text"] {
     background: transparent;
 }
 
-.ul-tasks {
-    margin-top: 1em;
+.tasks-list {
+    padding: 5px 0;
+    margin-top: 20px;
+    border: 2px solid #262626 ;
+    border-radius: 8px;
+    max-width: 600px;
+    min-width: fit-content;
+    margin: 20px auto 10px auto;
     text-align: center;
+    min-height: 35px;
 }
 
 ul {
     list-style: none;
 }
 
+.clear-btn {
+    border: none;
+    background: transparent;
+    float: right;
+}
 
+.clear-btn:hover {
+    cursor: pointer;
+    color: $hover-color;
+}
