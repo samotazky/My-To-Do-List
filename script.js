@@ -39,7 +39,7 @@ function myToDoListToString() {
     let myToDoListToStringify = JSON.stringify(myToDoList)
     localStorage.setItem("tasks", myToDoListToStringify)
 }
-// kvôli lokálnym premenným bolo nutné zadefinovať aj globálne 
+// kvôli lokálnym premenným bolo nutné  zadefinovať aj globálne 
 let myToDoListFromLS = localStorage.getItem("tasks")
 let myToDoListParse = JSON.parse(myToDoListFromLS)
 
