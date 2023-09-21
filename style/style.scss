@@ -3,14 +3,23 @@ $primary-color: #efefef;
 $secondary-color: #262626;
 $hover-color : #26262698;
 $primary-font: 'Poppins', sans-serif;
+$border-radius: 8px;
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
+
     background: $primary-color;
     font-family: $primary-font;
     color: $secondary-color;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 input[type="text"] {
@@ -18,13 +27,26 @@ input[type="text"] {
     border: none;
     border-bottom: 2px solid $secondary-color;
     background: transparent;
+    margin-bottom: 10px;
+}
+
+.add-btn {
+    font-weight: 600;
+    background: $secondary-color;
+    color: $primary-color;
+    border-radius: $border-radius;
+}
+
+.add-btn:hover,
+.add-btn:focus {
+    background: $primary-color;
+    color: $secondary-color;
 }
 
 .tasks-list {
     padding: 5px 0;
-    margin-top: 20px;
-    border: 2px solid #262626 ;
-    border-radius: 8px;
+    border: 2px solid $secondary-color;
+    border-radius: $border-radius;
     max-width: 600px;
     min-width: fit-content;
     margin: 20px auto 10px auto;
@@ -45,4 +67,15 @@ ul {
 .clear-btn:hover {
     cursor: pointer;
     color: $hover-color;
+}
+
+.tasks {
+    cursor: pointer;
+}
+
+
+.clicked {
+    color: $hover-color;
+    text-decoration: line-through;
+    cursor: pointer;
 }

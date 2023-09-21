@@ -3,11 +3,7 @@ const newTaskInput = document.querySelector("[data-new-task]")
 const addTaskBtn = document.querySelector("[data-add-task-btn]")
 const toDoList = document.querySelector("[data-todo-list]")
 const clearTasksBtn = document.querySelector(".clear-btn")
-const listItemsTasks = document.getElementsByClassName("tasks")
-console.log(listItemsTasks)
-
-
-
+//const listItemsTasks = document.querySelectorAll(".tasks")
 
 // táto podmienka zaistí že ak v LS nič nie, je vytvorí sa myToDoList ale ak sa nejaká hodnota v LS (key = tasks) nachádza vyberie ich a parsne ich 
 if(localStorage.getItem("tasks") === null) {
@@ -17,6 +13,7 @@ if(localStorage.getItem("tasks") === null) {
 
 else {
     myToDoList = JSON.parse(localStorage.getItem("tasks"))
+
 }
 
 // po kliknutí na tlačítko vloží na koniec myToDoList napísanú hodnotu v políčku (name = "addTask") --> prevedie na string a uloží do LS s key = "tasks" --> vyčistí políčko --> vyberie hodnotu z LS (key = "tasks") --> parsne ju --> a pripojí do ul(data-todo-list) 
@@ -37,7 +34,7 @@ toDoForm.addEventListener("submit", e => {
     task.classList.add("tasks")
     task.textContent = myToDoListParse[myToDoListParse.length - 1]
     document.querySelector("[data-todo-list]").appendChild(task)
-} )
+})
 
 // táto funkcia prevedie hodnoty z myToDoList na string --> uloží do LS s key = "tasks"
 function myToDoListToString() {
@@ -57,17 +54,7 @@ if (myToDoListFromLS !== null) {
         document.querySelector("[data-todo-list]").appendChild(task)
     })
 
-    // DOBRÝ ZAČIATOK
-    myToDoList.forEach(function () {
-        this.addEventListener("click", function () {
-            console.log("click");
-        })
-    })
 }
-else {
-   // alert("Local Storage je prázdny nemám čo vypísať ")
-}
-
 
 clearTasksBtn.addEventListener("click", function () {
     localStorage.clear()

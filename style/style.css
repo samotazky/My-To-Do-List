@@ -2,9 +2,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
   background: #efefef;
   font-family: "Poppins", sans-serif;
   color: #262626;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 input[type=text] {
@@ -12,11 +19,24 @@ input[type=text] {
   border: none;
   border-bottom: 2px solid #262626;
   background: transparent;
+  margin-bottom: 10px;
+}
+
+.add-btn {
+  font-weight: 600;
+  background: #262626;
+  color: #efefef;
+  border-radius: 8px;
+}
+
+.add-btn:hover,
+.add-btn:focus {
+  background: #efefef;
+  color: #262626;
 }
 
 .tasks-list {
   padding: 5px 0;
-  margin-top: 20px;
   border: 2px solid #262626;
   border-radius: 8px;
   max-width: 600px;
@@ -40,4 +60,14 @@ ul {
 .clear-btn:hover {
   cursor: pointer;
   color: rgba(38, 38, 38, 0.5960784314);
+}
+
+.tasks {
+  cursor: pointer;
+}
+
+.clicked {
+  color: rgba(38, 38, 38, 0.5960784314);
+  text-decoration: line-through;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
